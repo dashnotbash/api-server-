@@ -19,7 +19,7 @@ func helloFunc(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		http.Error(w, "oops", http.StatusNotFound)
 	}
-	writerresponse(w, "hello..... we are!!!!!")
+	writerresponse(w, "hello..... we are! !!!!")
 }
 
 func NoFunc(w http.ResponseWriter, r *http.Request) {
