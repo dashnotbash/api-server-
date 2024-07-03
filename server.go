@@ -6,6 +6,7 @@ func main() {
 
 	http.HandleFunc("/hello", helloFunc)
 	http.HandleFunc("/no", NoFunc)
+	http.HandleFunc("/hi", hiio)
 	add := "localhost:8080"
 	err := http.ListenAndServe(add, nil)
 	if err != nil {
@@ -18,7 +19,7 @@ func helloFunc(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		http.Error(w, "oops", http.StatusNotFound)
 	}
-	writerresponse(w, "hello man!")
+	writerresponse(w, "hello..... man!")
 }
 
 func NoFunc(w http.ResponseWriter, r *http.Request) {
@@ -27,6 +28,12 @@ func NoFunc(w http.ResponseWriter, r *http.Request) {
 	}
 	writerresponse(w, "no one here")
 
+}
+func hiio(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "GET" {
+		http.Error(w, "oops", http.StatusNotFound)
+	}
+	writerresponse(w, "hiioo")
 }
 func writerresponse(w http.ResponseWriter, responseString string) {
 
